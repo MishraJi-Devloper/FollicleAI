@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#1a1f3a"/>
+  
+  <!-- Hair follicle graphic -->
+  <g transform="translate(300, 360)">
+    <!-- Outer circle with gradient -->
+    <defs>
+      <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+      </linearGradient>
+      <linearGradient id="dropGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#667eea;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Circle -->
+    <circle cx="0" cy="0" r="90" fill="none" stroke="url(#circleGrad)" stroke-width="4"/>
+    
+    <!-- Hair follicle drop -->
+    <path d="M 0,-40 Q -25,-20 -25,10 Q -25,40 0,50 Q 25,40 25,10 Q 25,-20 0,-40 Z" 
+          fill="url(#dropGrad)" stroke="#1a1f3a" stroke-width="3"/>
+    
+    <!-- Sparkles -->
+    <g opacity="0.9">
+      <path d="M -50,-60 L -48,-50 L -40,-52 L -48,-50 L -50,-40 L -52,-50 L -60,-52 L -52,-50 Z" 
+            fill="#00d4ff"/>
+      <path d="M -30,-75 L -28,-68 L -22,-70 L -28,-68 L -30,-61 L -32,-68 L -38,-70 L -32,-68 Z" 
+            fill="#00f2fe"/>
+      <path d="M 40,-50 L 42,-42 L 48,-44 L 42,-42 L 40,-34 L 38,-42 L 32,-44 L 38,-42 Z" 
+            fill="#667eea"/>
+    </g>
+    
+    <!-- Shine effect -->
+    <ellipse cx="-15" cy="-15" rx="15" ry="20" fill="rgba(255,255,255,0.3)"/>
+  </g>
+  
+  <!-- Text: FollicleAI -->
+  <text x="450" y="430" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" 
+        font-size="120" font-weight="700" fill="#ffffff" letter-spacing="-2">
+    Follicle<tspan fill="#00d4ff">AI</tspan>
+  </text>
+</svg>

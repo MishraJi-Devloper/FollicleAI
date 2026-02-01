@@ -1,0 +1,120 @@
+.blog-page {
+  flex: 1;
+  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-3xl);
+}
+
+.blog-hero {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-2xl);
+  text-align: center;
+}
+
+.blog-hero p {
+  color: var(--color-text-secondary);
+}
+
+.blog-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+.blog-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  backdrop-filter: blur(16px);
+}
+
+.blog-card h2 a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.blog-card h2 a:hover {
+  color: var(--color-accent);
+}
+
+.blog-card-description {
+  color: var(--color-text-secondary);
+  margin: var(--spacing-sm) 0;
+}
+
+.blog-meta {
+  display: flex;
+  gap: var(--spacing-sm);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.blog-tags {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.blog-tag {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.blog-post {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  backdrop-filter: blur(16px);
+}
+
+.blog-post-header h1 {
+  margin-top: var(--spacing-md);
+}
+
+.blog-back-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.blog-back-link:hover {
+  text-decoration: underline;
+}
+
+.blog-post-content {
+  margin-top: var(--spacing-xl);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.blog-post-content h2,
+.blog-post-content h3 {
+  color: var(--color-text);
+  margin-top: var(--spacing-xl);
+}
+
+.blog-post-content ul {
+  padding-left: var(--spacing-xl);
+}
+
+.blog-post-content strong {
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .blog-page {
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-2xl);
+  }
+
+  .blog-post {
+    padding: var(--spacing-xl);
+  }
+}

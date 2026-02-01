@@ -1,0 +1,16 @@
+/**
+ * Index CSS - Root styles
+ * Global CSS is in styles/globals.css
+ */
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
