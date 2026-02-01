@@ -232,7 +232,14 @@ export const Upload: React.FC<UploadProps> = ({ onAnalysisComplete }) => {
               className="upload-dropzone"
               onDragOver={handleDragOver}
               onDrop={handleDrop}
-              onClick={() => fileInputRef.current?.click()}
+              onClick={() => {
+                console.log('Dropzone clicked, triggering file input');
+                fileInputRef.current?.click();
+              }}
+              onTouchEnd={() => {
+                console.log('Dropzone touched, triggering file input');
+                fileInputRef.current?.click();
+              }}
               role="button"
               tabIndex={0}
               aria-label="Upload image"
@@ -245,7 +252,7 @@ export const Upload: React.FC<UploadProps> = ({ onAnalysisComplete }) => {
               <div className="dropzone-content">
                 <span className="dropzone-icon">📸</span>
                 <h3>Upload Scalp Image</h3>
-                <p>Drag and drop or click to select</p>
+                <p>Tap or click to select</p>
                 <p className="dropzone-hint">JPG, PNG, WebP up to 10MB</p>
               </div>
               <input
@@ -253,7 +260,10 @@ export const Upload: React.FC<UploadProps> = ({ onAnalysisComplete }) => {
                 type="file"
                 accept={LIMITS.ACCEPTED_EXTENSIONS.join(',')}
                 capture="environment"
-                onChange={handleFileSelect}
+                onChange={(e) => {
+                  console.log('File input changed:', e.target.files?.length, 'files selected');
+                  handleFileSelect(e);
+                }}
                 aria-label="Select image file"
                 style={{ display: 'none' }}
               />

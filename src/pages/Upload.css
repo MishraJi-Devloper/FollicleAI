@@ -79,14 +79,18 @@
 }
 
 .upload-dropzone:hover,
-.upload-dropzone:focus {
+.upload-dropzone:focus,
+.upload-dropzone:active {
   border-color: var(--color-accent);
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   outline: none;
+  background: var(--glass-bg-highlight);
 }
 
-.upload-dropzone:hover::before {
+.upload-dropzone:hover::before,
+.upload-dropzone:focus::before,
+.upload-dropzone:active::before {
   opacity: 0.05;
 }
 
@@ -97,6 +101,10 @@
   gap: var(--spacing-lg);
   position: relative;
   z-index: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .dropzone-icon {
@@ -374,8 +382,20 @@
     font-size: 3rem;
   }
 
+  .upload-dropzone {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .upload-dropzone h3 {
     font-size: 1.5rem;
+  }
+
+  .dropzone-icon {
+    font-size: 3rem;
   }
 
   .upload-preview {
