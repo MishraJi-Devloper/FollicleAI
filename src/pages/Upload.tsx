@@ -166,15 +166,20 @@ export const Upload: React.FC<UploadProps> = ({ onAnalysisComplete }) => {
     }));
 
     try {
+      console.log('Starting analysis with file:', uploadState.file.name, uploadState.file.size);
+      
       // analyzeImage handles FormData upload internally
       // If localhost: uses mock backend with 1.5s simulated delay
       // If production: sends to real /analyze endpoint
       const result = await analysisService.analyzeImage(uploadState.file, userConsent);
       
+      console.log('Analysis complete, navigating to results', result);
+      
       // Pass result to parent and navigate to results page
       onAnalysisComplete(result);
       navigate(ROUTES.RESULTS);
     } catch (error) {
+      console.error('Analysis error:', error);
       const errorMessage =
         error instanceof Error ? error.message : UI_STRINGS.ERRORS.ANALYSIS_ERROR;
       setUploadState((prev) => ({
